@@ -1,140 +1,83 @@
-Job Portal Web Application
+# 💼 Job Portal Web Application
 
-A full-stack job portal built with Flask (Python) that allows:
+A full-stack Job Portal built with Python and Flask. Supports three user roles — Job Seeker, Employer, and Admin — with live job listings from external APIs.
 
-✔ Job Seekers to search, apply, and track applications
-✔ Employers to post jobs and manage applicants
-✔ Admin to manage users and system data
-✔ Integration with multiple external Job APIs
-✔ Resume upload and Applicant Tracking
+---
 
-This project simulates real-world platforms like LinkedIn / Indeed / Naukri.
+## 🚀 Features
 
-🚀 Features
-👤 Job Seekers
+- 🔐 User registration and login with role selection (Job Seeker / Employer / Admin)
+- 🌐 Live job listings fetched from **Remotive** and **Arbeitnow** external APIs
+- 🔍 Search jobs by keyword, location, and category
+- 📄 Job Seekers can save jobs, apply with resume upload, and track application status
+- 🏢 Employers can post, edit, and delete jobs and review applicants
+- 👮 Admin can block, unblock, or delete users
+- 💾 SQLite database with SQLAlchemy ORM
 
-Register and Login
+---
 
-Browse jobs from:
+## 🛠️ Tech Stack
 
-Internal postings
+| Layer      | Technology                        |
+|------------|-----------------------------------|
+| Backend    | Python, Flask                     |
+| Database   | SQLite, Flask-SQLAlchemy          |
+| Auth       | Flask-Login, Werkzeug (bcrypt)    |
+| Frontend   | HTML, Bootstrap, Jinja2           |
+| APIs       | Remotive API, Arbeitnow API       |
 
-External Job APIs (Remotive, ArbeitNow)
+---
 
-Apply for jobs with resume upload
+## 📂 Project Structure
 
-Save jobs and apply later
+```
+job_portal_project/
+├── app.py          # Main Flask app and routes
+├── models.py       # Database models
+├── requirements.txt
+├── uploads/        # Uploaded resumes
+└── templates/      # HTML pages
+    ├── index.html
+    ├── login.html
+    ├── register.html
+    ├── jobs.html
+    ├── post_job.html
+    ├── apply_internal.html
+    ├── my_applications.html
+    └── admin.html
+```
 
-Remove saved jobs
+---
 
-View all jobs they have applied for
+## ⚙️ How to Run
 
-Track application status (Pending / Accepted / Rejected)
+```bash
+# 1. Clone the repository
+git clone https://github.com/nirikshan9611/Job-Portal-Flask-Web-App.git
+cd Job-Portal-Flask-Web-App
 
-👨‍💼 Employers
+# 2. Install dependencies
+pip install flask flask-login flask-sqlalchemy flask-wtf requests werkzeug
 
-Create job postings
-
-Edit and delete posted jobs
-
-View list of applicants per job
-
-Download uploaded resumes
-
-Accept / Reject applications
-
-🛡 Admin
-
-View all users
-
-Block / unblock users
-
-Delete users
-
-Monitor jobs and applications
-
-🌍 APIs Used
-
-External jobs are fetched from:
-
-Remotive Jobs API
-
-ArbeitNow API
-
-Providing real-time job results beyond portal entries.
-
-🏗 Tech Stack
-
-Backend: Flask (Python)
-Database: SQLite (SQLAlchemy ORM)
-Frontend: HTML, CSS, Bootstrap
-Auth: Flask-Login
-API Integration: REST APIs via Requests
-
-📂 Project Structure
-project/
-│── app.py
-│── models.py
-│── requirements.txt
-│── README.md
-│── database.db (or job_portal.sqlite3)
-│── uploads/
-│── templates/
-│   ├── base.html
-│   ├── index.html
-│   ├── jobs.html
-│   ├── post_job.html
-│   ├── employer_jobs.html
-│   ├── applicants.html
-│   ├── apply_internal.html
-│   ├── application_submitted.html
-│   ├── saved_jobs.html
-│   ├── my_applications.html
-│   ├── login.html
-│   └── register.html
-
-▶️ Installation & Setup
-1️⃣ Clone the repository
-git clone https://github.com/your-username/job-portal.git
-cd job-portal
-
-2️⃣ Create virtual environment (optional but recommended)
-python -m venv venv
-venv\Scripts\activate   (Windows)
-source venv/bin/activate (Mac/Linux)
-
-3️⃣ Install dependencies
-pip install -r requirements.txt
-
-4️⃣ Run the app
+# 3. Run the app
 python app.py
+```
 
+Open your browser and go to: `http://127.0.0.1:5000`
 
-Then open in your browser:
+---
 
-http://127.0.0.1:5000
+## 👤 User Roles
 
-🔐 User Roles Summary
-Role	Capabilities
-Job Seeker	Search, Apply, Save jobs, Track status
-Employer	Post, Edit, Delete jobs, View applicants
-Admin	Manage users & system data
-📌 Future Enhancements
+| Role       | What they can do                                      |
+|------------|-------------------------------------------------------|
+| Job Seeker | Search jobs, save jobs, apply, track application status |
+| Employer   | Post jobs, edit/delete jobs, view applicants          |
+| Admin      | Block/unblock/delete users, view all data             |
 
-Email notifications to employer/applicant
+---
 
-Resume screening automation (AI matching)
+## 👨‍💻 Developed By
 
-Job recommender system
-
-Deployment on Render/Heroku
-
-Dashboard analytics
-
-🤝 Contributing
-
-Pull requests and suggestions are welcome — this project is intended for learning and academic use.
-
-📄 License
-
-This project is open-source and free to use for educational purposes.
+**Nirikshan K**  
+GitHub: [github.com/nirikshan9611](https://github.com/nirikshan9611)
